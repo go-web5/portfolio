@@ -1,0 +1,20 @@
+//*------------------*
+//*  ボタン
+//*------------------*
+
+// GOLDボタン
+.btn {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  @include rem(16);
+  display: inline-block;
+  width: 128px;
+  height: 46px;
+  border-radius: 10px;
+  color: $base-color-white;
+  background-color: $accent-color-gold;
+  box-shadow: 0px 10px 11.7px 1.3px rgba(2, 10, 13, 0.45);
+  line-height: 45px;
+  text-align: center;
+}
+

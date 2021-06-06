@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+//*------------------*
+//*  NOTO SANS JPフォント
+//*------------------*
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+//*------------------*
+//*  変数 config
+//*------------------*
+
+@import "setting/config";
+
+//*------------------*
+//*  mixin
+//*------------------*
+
+@import "mixin/mixin";
+
+//*------------------*
+//*  base
+//*------------------*
+
+@import "base/base";
+
+//*------------------*
+//*  mojule
+//*------------------*
+
+// ヘッダー
+@import "module/header";
+
+// フッター
+@import "module/footer";
+
+// ボタン
+@import "module/button";
+
+//*------------------*
+//*  page
+//*------------------*
+
+// トップページ
+@import "page/front-page";
+
+//*------------------*
+//*  responsive (mojule)
+//*------------------*
+
+// ヘッダー（トップページ）
+@import "responsive/header";
+
+// トップページ
+@import "responsive/front-page";
+
+// フッター
+@import "responsive/footer";
+
+// ボタン
+@import "responsive/button";

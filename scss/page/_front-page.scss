@@ -36,12 +36,8 @@
     background-repeat: no-repeat;
     background-position: center right 50%;
     background-size: cover;
-    padding-top: 60px;
+    padding-top: 40px;
   }
-
-  // &__text {
-  //   margin-bottom: 5px;
-  // }
 
   &__sub-name {
     display: block;
@@ -70,7 +66,7 @@
 
   &__profile {
     max-width: 380px;
-    width: 85%;
+    width: 78%;
     position: absolute;
     bottom: 0;
     left: -32px;

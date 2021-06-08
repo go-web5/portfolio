@@ -225,38 +225,6 @@ $(document).ready(function () {
   });
 });
 
-// 送信完了＆送信失敗画面コード①
-
-// $(function() {
-
-//   //googleform
-//   var $form = $( '#js-form' )
-
-//   $form.submit(function(e) { 
-//     $(".contact__form").css("padding-bottom", "0");
-
-//     $.ajax({ 
-//      url: $form.attr('action'), 
-//      data: $form.serialize(), 
-//      type: "POST", 
-//      dataType: "xml", 
-//      statusCode: { 
-//         0: function() { 
-//           //送信に成功したときの処理
-//           $(".submit__btn").slideUp()
-//           $(".end-message").slideDown()
-//         }, 
-//         200: function() { 
-//           //送信に失敗したときの処理
-//           // $form.slideUp()
-//           $(".false-message").slideDown()
-//         }
-//       } 
-//     });
-//     return false; 
-//   })
-// });
-
 
 //*---------------------*
 //*  スムーズスクロール
@@ -342,9 +310,6 @@ $(function () {
   // 画面横幅のサイズを取得、575px以下だったら
   if (windowWidth <= 575) {
     $('#jsMv').css('height', spMv);
-
-    // 画面幅が変わったら高さを再取得して指定のCSSを適用する
-    
   }
 
   // 画面横幅のサイズを取得、991px以下だったら
@@ -397,65 +362,3 @@ $(function() {
     , 200); //0.2秒ごとに繰り返す
   });
 });
-
-
-// パターン２
-//--------------------------------
-// フェードイン
-//--------------------------------
-// const bgm = document.querySelector("#beat");
-// bgm.volume = 0;  //ボリュームを最低値にする
-// bgm.play();
-
-// let timerid = setInterval( ()=>{
-//   // ボリュームが1になったら終了
-//   if( (bgm.volume + 0.1) >= 1 ){
-//     bgm.volume = 1;
-//     clearInterval(timerid);  //タイマー解除
-//   }
-//   // 0.1ずつボリュームを足していく
-//   else{
-//     bgm.volume += 0.1;
-//   }
-// }
-// , 200); //0.2秒ごとに繰り返す
-// //--------------------------------
-// // フェードアウト
-// //--------------------------------
-// const bgm = document.querySelector("#bgm");
-// bgm.volume = 1;
-// bgm.play();
-
-// let timerid = setInterval( ()=>{
-//   // ボリュームが0になったら終了
-//   if( (bgm.volume - 0.1) <= 0 ){
-//     bgm.volume = 0;
-//     bgm.pause();
-//     clearInterval(timerid);  //タイマー解除
-//   }
-//   // 0.1ずつボリュームを減らしていく
-//   else{
-//     bgm.volume -= 0.1;
-//   }
-// }
-// , 200); //0.2秒ごとに繰り返す
-
-
-// パターン３
-// $(function () {
-// 	var beat = $("#beat").get(0);
-// 	var isPlaying = false;
-// 	$("#btn").on("click", function () {
-// 		if (isPlaying) {
-// 			audio.pause();
-// 		} else {
-// 			audio.play();
-// 		}
-// 	});
-// 	audio.onplaying = function() {
-// 		isPlaying = true;
-// 	};
-// 	audio.onpause = function() {
-// 		isPlaying = false;
-// 	};
-// });

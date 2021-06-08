@@ -459,7 +459,7 @@ body.noscroll {
   background-repeat: no-repeat;
   background-position: center right 50%;
   background-size: cover;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .mv__sub-name {
@@ -494,7 +494,7 @@ body.noscroll {
 
 .mv__profile {
   max-width: 380px;
-  width: 85%;
+  width: 78%;
   position: absolute;
   bottom: 0;
   left: -32px;
@@ -1396,6 +1396,15 @@ input[type="checkbox"]:checked + span::after {
   }
   .br-sp {
     display: block;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .mv__front {
+    padding-top: 60px;
+  }
+  .mv__profile {
+    width: 85%;
   }
 }
 

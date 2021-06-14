@@ -1,0 +1,797 @@
+//*------------------*
+//*  MV (Main Visual)
+//*------------------*
+.mv {
+  padding-top: 100px;
+  width: 100%;
+  // height: calc(100vh + 220px);
+  // min-height: 100vh; /* Fallback */
+  // min-height: calc(var(--vh, 1vh) * 100);
+  position: relative;
+  @include toppanBunkyu;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 160px;
+    background-color: $main-color-black;
+    width: 100%;
+    height: 20%;
+    z-index: -1;
+  }
+
+  &__wrapper {
+    padding-bottom: 220px;
+    height: 100%;
+  }
+
+  &__front {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/mv-main.png);
+    background-repeat: no-repeat;
+    background-position: center right 50%;
+    background-size: cover;
+    padding-top: 40px;
+  }
+
+  &__sub-name {
+    display: block;
+    @include rem(18);
+    background-color: $main-color-black;
+    color: $base-color-white;
+    box-shadow: 3px 5px 5px 2px rgba(2, 10, 13, 0.6);
+    width: 6.8em;
+    height: 1.444em;
+    line-height: 26px;
+    padding: 0 8px;
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    &_inline {
+      @include rem(50);
+              box-decoration-break: clone; /* 見出し背景色の分割 */
+      -webkit-box-decoration-break: clone; 
+      line-height: 1.1;
+      background-color: $base-color-white;
+      box-shadow: 3px 5px 5px 2px rgba(2, 10, 13, 0.6);
+      padding: 2px 8px;
+    }
+  }
+
+  &__profile {
+    max-width: 380px;
+    width: 78%;
+    position: absolute;
+    bottom: 0;
+    left: -32px;
+    img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+
+  &__message {
+    display: inline-block;
+    background-color: $base-color-white;
+    @include rem(16);
+    font-family: $font-type1;
+    padding: 0.125em 0.5em;
+    position: absolute;
+    bottom: -13.963em;
+    left: 0;
+    z-index: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  // 音楽再生ボタン非表示
+  &__beat {
+    display: none;
+  }
+}
+
+.emphasis_red {
+  color: $accent-color-red;
+}
+
+.scroll {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  -webkit-text-orientation: mixed;
+  text-orientation: mixed;
+  position: absolute;
+  bottom: 28px;
+  right: 2px;
+  @include rem(16);
+  color: $base-color-white;
+  display: none;
+
+  span {
+    width: 2px;
+    height: 35px;
+    background-color: $base-color-white;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+//*------------------*
+//*  About
+//*------------------*
+
+.about {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  
+  &__wrapper {
+    padding: 0 5%;
+    max-width: calc(1000px + 14%);
+    margin: 0 auto;
+  }
+
+  &__img {
+    max-width: 380px;
+    margin: 0 auto 30px;
+    p {
+      text-align: center;
+    }
+
+    &-name {
+      @include toppanBunkyu;
+      @include rem (24);
+    }
+  }
+  
+  &__profile {
+    @include rem(20);
+    p {
+      @include rem(16);
+      color: $main-color-black-text;
+    }
+  }
+}
+
+.head {
+  margin-bottom: 60px;
+  &__ttl {
+    @include toppanBunkyu;
+    @include rem(28);
+    text-align: center;
+
+    &_white {
+      color: $base-color-white;
+    }
+  }
+}
+
+.emphasis_red {
+  color: $accent-color-red;
+}
+
+.profile-area {
+  padding-bottom: 30px;
+
+  &__ttl {
+    position: relative;
+    padding-bottom: 1.25em;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: $main-color-black;
+      position: absolute;
+      bottom: 1em;
+      right: 0;
+    }
+  }
+
+  &__text {
+    padding-bottom: 1rem;
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.interlest-area {
+  &__ttl {
+    position: relative;
+    padding-bottom: 1.25em;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: $main-color-black;
+      position: absolute;
+      bottom: 1em;
+      right: 0;
+    }
+  }
+}
+
+.decoration_big {
+  @include rem(120);
+  color: $sub-color-grey-1;
+  width: 100%;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translate(-51%, 0);
+  -webkit-transform: translate(-51%, 0);
+  -ms-transform: translate(-51%, 0);
+
+  &_about {
+    z-index: -1;
+    width: 2.7em;
+  }
+}
+
+
+//*------------------*
+//*  Vision
+//*------------------*
+
+.vision {
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  
+
+  &__top {
+    padding-top: 60px;
+    padding-bottom: 130px;
+    background-image: url(../images/vision-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &_wrapper {
+      padding: 0 5%;
+    }
+  }
+
+  &__bottom {
+    padding-top: 47px;
+  }
+}
+
+// 意気込み
+.intro-area {
+  background-color: $base-color-white;
+  border-radius: 40px;
+  padding: 37px 4% 41px; 
+
+
+  &__ttl {
+    @include rem(20);
+    text-align: center;
+    padding-bottom: 37px;
+    font-family: $font-type1;
+  }
+
+  &__text {
+    line-height: 1.75;
+    @include rem(16);
+    color: $main-color-black-text;
+
+    p {
+      text-align: center;
+    }
+
+    p + p {
+      padding-top: 1em;
+    }
+  }
+}
+
+// 入社後の成長計画
+.plan-area {
+  margin-bottom: -10px;
+  padding: 0 4%;
+
+  &__item {
+    border-radius: 10px;
+    padding: 55px 5%;
+    margin: 0 auto 10px;
+    max-width: 500px;
+    position: relative;
+    // z-index: 0;
+
+    // 各背景色
+    &_grey-1 {
+      background-color: $sub-color-grey-1;
+    } 
+    &_grey-2 {
+      background-color: $sub-color-grey-2;
+    } 
+    &_grey-3 {
+      background-color: $sub-color-grey-3;
+    } 
+    &_grey-4 {
+      background-color: $sub-color-grey-4;
+    } 
+  }
+  &__ttl {
+    margin-bottom: 40px;
+    text-align: center;
+    @include rem(20);
+    font-family: $font-type1;
+  }
+  &__item_ttl {
+    max-width: 160px;
+    text-align: center;
+    margin: 0 auto 55px;
+    img {
+      width: 100%;
+    }
+  }
+  .size_control {
+    max-width: 175px;
+
+  }
+  &__item_text {
+    color: $main-color-black-text;
+    list-style: square inside;
+    li {
+      text-indent: -1.2em;
+      padding-left: 1.2em;
+    }
+  }
+}
+
+.guidance-icon_red {
+  position: absolute;
+  left: 50%;
+  bottom: -80px;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-top-color: $accent-color-red;
+}
+
+.decoration_big_vision {
+  z-index: -1;
+  width: 2.7em;
+}
+
+//*------------------*
+//*  Skills
+//*------------------*
+
+.skills {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background-image: url(../images/skills-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &__wrapper {
+    margin: 0 auto -15px;
+    padding: 0 4%;
+    max-width: 1300px;
+  }
+
+  &__item {
+    background-color: $base-color-white;
+    border-radius: 10px;
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto 15px;
+    padding: 0 4% 40px;
+  }
+  &__item_icon {
+    width: 230px;
+    height: 230px;
+    margin: 0 auto;
+    position: relative;
+    img {
+      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__item_ttl {
+    @include rem(20);
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  &__item_text1 {
+    padding-bottom: 1em;
+  }
+  &__item_text2 {
+    text-align: center;
+  } 
+}
+.decoration_big_skills {
+  color: $base-color-white;
+  opacity: 0.1;
+  z-index: -1;
+  width: 2.2em;
+}
+
+//*------------------*
+//*  Works
+//*------------------*
+
+.works {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background-color: $sub-color-grey-1;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  &__wrapper {
+    padding: 0 4%;
+    margin-bottom: -30px;
+  }
+
+  &__item {
+    @include rem(20);
+    background-color: $base-color-white;
+    border-radius: 10px;
+    padding: 43px 4.8%;
+    margin-bottom: 30px;
+  }
+  &__item_main {
+    max-width: 400px;
+    margin: 0 auto 40px;
+  }
+  &__item_ttl {
+    padding-bottom: 14px;
+  }
+  &__item_img {
+    max-width: 401px;
+    margin-bottom: 40px;
+    box-shadow: 0px 10px 11.7px 1.3px rgba(2, 10, 13, 0.45);
+    img {
+      width: 100%;
+    }
+    &_margin {
+      margin-bottom: 20px;
+    }
+  }
+
+  // BASIC認証
+  &__item_password_btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__item_password {
+    @include rem(16);
+    margin-bottom: 20px;
+  }
+  &__item_password_ttl {
+    @include rem(16);
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  &__detail {
+    padding-bottom: 25px;
+    &_ttl {
+      @include rem(20);
+      position: relative;
+      padding-bottom: 1.25em;
+    }
+    &_ttl::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: $main-color-black;
+      position: absolute;
+      bottom: 1em;
+      right: 0;
+    }
+    &_img {
+      max-width: 150px;
+      margin: 20px auto 0;
+      img {
+        width: 100%;
+      }
+    }
+
+    &_list {
+      @include rem(16);
+    }
+  }
+
+  &__parts {
+    &_ttl {
+      @include rem(20);
+      position: relative;
+      padding-bottom: 1.25em;
+    }
+    &_ttl::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: $main-color-black;
+      position: absolute;
+      bottom: 1em;
+      right: 0;
+    }
+    &_text {
+      @include rem(16);
+    }
+  }
+}
+
+
+// GOLDボタン
+.btn__area {
+  text-align: center;
+}
+.btn__area_flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.decoration_big_works {
+  color: $base-color-white;
+  z-index: -1;
+  width: 2.7em;
+}
+
+//*------------------*
+//*  Input & Output
+//*------------------*
+
+.input-output {
+  background-image: url(../images/input-output-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.swiper-slide {
+  background-color: $base-color-white;
+  border-radius: 10px;
+  padding: 24px 4% 40px;
+
+  a {
+    color: $main-color-black-text;
+  }
+
+  &__ttl {
+    @include rem(20);
+    text-align: center;
+    padding-bottom: 24px;
+  }
+  &__img {
+    margin: 0 auto;
+    padding-bottom: 24px;
+    img {
+      width: 100%;
+    }
+    &_size_s {
+      width: 70%;
+    }
+    &_size_l {
+      width: 100%;
+    }
+  }
+  &__text {
+    @include rem(16);
+  }
+  &_twitter_custum {
+    width: 220px;
+    padding: 5px 1% 0;
+  }
+}
+
+.twitter-moment {
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+//*------------------*
+//*  Contact
+//*------------------*
+
+.contact {
+  background-image: url(../images/contact-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 60px 4% 93px;
+
+  &__head_margin {
+    margin-bottom: 40px;
+  }
+
+  .head__text {
+    text-align: center;
+  }
+
+  &__wrapper {
+    background-color: rgba(242, 244, 246, 0.3);
+    border-radius: 5px;
+    max-width: 830px;
+    margin: 0 auto;
+  }
+
+  &__form {
+    max-width: 650px;
+    width: 100%;
+    padding: 53px 4% 51px;
+    opacity: 1;
+    margin: 0 auto;
+
+    .Required-tag {
+      font-family: "Noto Sans JP", sans-serif;
+      @include rem(14);
+      color: $base-color-white;
+      background-color: $main-color-black;
+      display: inline-block;
+      padding: 0 6px 2px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    label {
+      display: block;
+      padding-bottom: .5em;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.4em 0.625em;
+      border-radius: 5px;
+    }
+    input[type="text"],
+    input[type="email"] {
+      background-color: $base-color-white;
+      max-width: 400px;
+      width: 100%;
+      height: 3em;
+    }
+    textarea {
+      background-color: $base-color-white;
+      max-width: 650px;
+      width: 100%;
+      height: 8em;
+    }
+  }
+
+  &__name,
+  &__furigana,
+  &__mail,
+  &__detail {
+    padding-bottom: 35px;
+  }
+
+  &__check-box {
+    label {
+      padding-bottom: 0;
+      text-align: center;
+    }
+    &_text {
+      margin-bottom: 30px;
+      text-indent: -0.9em;
+    }
+    .alert {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  &__margin_adjustment {
+    margin-bottom: 15px;
+  }
+
+  // 送信完了＆送信失敗画面
+  .end-message,
+  .false-message {
+    display: none;
+    @include rem(18);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 50px;
+    
+  }
+}
+
+.alert {
+  color: $accent-color-red;
+  margin-bottom: 5px;
+  @include rem(14);
+}
+
+
+// ここから自作チェックボックス
+// デフォルトのチェックボックス透明にする,tabで操作できる状態
+input[type="checkbox"] {
+  opacity:0; 
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;  /* デフォルトのスタイルをリセット */
+  position: absolute; /* レイアウトに関与させない */
+
+  // チェックする前
+  + span {
+    cursor: pointer;
+    position: relative;
+    padding-left: 31px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position:absolute;
+      transition: .5s;
+    }
+
+    // チェック前の四角の枠線だけ
+    &::before {
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      border: 1px solid $sub-color-grey-4;
+      background-color: $base-color-white;
+      border-radius: 1px;
+    }
+
+    // チェック後のチェックマーク（チェック前は透明にしておく）
+    &::after {
+      border-right: 3px solid $main-color-black-text; 
+      border-bottom: 3px solid $main-color-black-text; 
+      width: 9px; 
+      height: 16px;
+      transform: rotate(45deg) translate(-5px,-60%);
+      -ms-transform: rotate(45deg) translate(-5px,-60%);
+      -webkit-transform: rotate(45deg) translate(-5px,-60%);
+      border-radius: 1px;
+      top: 50%;
+      left: 2px;
+      opacity: 0;
+    }
+  }
+
+  // チェック後に背景色をつけてボーダーを消す
+  &:checked + span::before {
+    background-color: $base-color-white;
+    border: 0px none;
+  }
+  // チェック後に透明にしておいたチェックマークを表示
+  &:checked + span::after {
+    opacity: 1;
+  }
+}

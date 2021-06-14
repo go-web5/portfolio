@@ -1,0 +1,90 @@
+//*------------------*
+//*  フッター
+//*------------------*
+
+.footer {
+  background-color: $main-color-black;
+  color: $base-color-white;
+  padding-top: 5px;
+  padding-bottom: 10px;
+
+  &__menu {
+    @include rem(18);
+    @include toppanBunkyu;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    a {
+      color: $base-color-white;
+      padding: 0 5px;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+  }
+
+  &__sns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 42px;
+
+    &_item1_color,
+    &_item2_color {
+      font-size: 35px;
+      color: $base-color-white;
+    }
+
+    a {
+      padding: 10px;
+      display: inline-block;
+    }
+  }
+
+  &__sns_item3 {
+    width: 48px;
+    img {
+      width: 100%;
+    }
+  }
+  &__copyright {
+    @include rem(16);
+  }
+}
+
+// トップへ戻るボタン
+.pagetop {
+  bottom: 10%;
+  display: none;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+
+  &__btn {
+    padding: 8px 5px 0;
+    width: 70px;
+    height: 80px;
+    border-radius: 5px;
+    background-color: $accent-color-gold;
+    display: block;
+    
+    img {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+    }
+    span {
+      padding-top: 2px;
+      font-weight: bold;
+      display: block;
+      @include rem(14);
+      color: $main-color-black;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}

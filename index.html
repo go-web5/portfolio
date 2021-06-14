@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gosei Nakazono Portfolio</title>
+  <meta name="description" content="Webコーダーへ転職するためのポートフォリオ by Go " />
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <!-- AOS CSS (フワッと表示) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- Swiper CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css?ver=1.0.3">
+
+  <!-- ファビコン --><!-- 複数サイズの画像を1つのファイルにまとめたico形式を用意 -->
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <!-- スマホ用アイコン -->
+  <!-- iOS,Safariのホーム画面など -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <!-- Android Chromeのブラウザタブ、ホーム画面 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+
+  <!-- OGP設定 -->
+  <meta property="og:url" content="https://go-webcreator.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gosei Nakazono Portfolio"/>
+  <meta property="og:description" content="Webコーダーへ転職するためのポートフォリオ by Go" />
+  <meta property="og:site_name" content="Gosei Nakazono Portfolio" />
+  <meta property="og:image" content="https://go-webcreator.com/images/portfolio-fv-ogp.png" />
+  <!-- /OGP設定 -->
+
+  <!-- Twitter設定 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@GO_WebDesigner" />
+  <!-- /Twitter設定 -->
+
+  <!-- すべてのブラウザに有効、検索結果に表示しない -->
+  <meta name="robots" content="noindex">
+
+  <!-- 凸版文久見出し明調 Std -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'pcz4dhm',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
+  <!-- FontAwesomeアイコン -->
+  <script src="https://kit.fontawesome.com/ed2e1eea5d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <main>
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="header__wrapper">
+        <!-- ロゴ -->
+        <h1 class="header__logo">
+          <a href="index.html">
+            <img src="images/portfolio-logo2.svg" alt="ポートフォリオロゴ">
+          </a>
+        </h1>
+
+        <!-- SP用ドロワーメニュー (ハンバーガーメニュー)  -->
+        <button type="button" id="js-hamburger" class="button hamburger" aria-controls="js-glabal-menu" aria-expanded="false" area-label="メニューを開閉する">
+          <span class="hamburger__line">
+          </span>
+        </button>
+
+        <!-- ドロワーメニュータイトル -->
+        <div class="sp-global-menu" id="js-global-menu" area-hidden="true">
+          <div class="sp-global-menu__wrapper">
+            
+            <div class="drawer__text">
+              <h2 class="drawer__name">
+                <!-- <span class="drawer__sub-name">Web Coder</span> -->
+                  Gosei<br>
+                  Nakazono
+                <span class="drawer__logo">
+                  <img src="images/portfolio-logo2.svg" alt="ポートフォリオのロゴ">
+                </span>
+              </h2>
+            </div>  
+
+            <!-- ドロワーメニューナブ -->
+            <nav class="drawer__nav">
+              <ul class="drawer__nav_wrapper">
+                <li><a href="#about">About</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+
+            <!-- ドロワーSNSアイコン -->
+            <ul class="drawer__sns">
+              <li class="drawer__sns_item1">
+                <a href="https://twitter.com/GO_WebDesigner" target="_blank">
+                  <i class="fab fa-twitter drawer__sns_item1_color"></i>
+                </a>
+              </li>
+              <li class="drawer__sns_item2">
+                <a href="https://github.com/go-web5" target="_blank">
+                  <i class="fab fa-github drawer__sns_item2_color"></i>
+                </a>
+              </li>
+              <li class="drawer__sns_item3">
+                <a href="https://note.com/go_web" target="_blank">
+                  <img src="images/note-logo-white.svg" alt="noteのロゴ">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /.sp-header-menu -->
+
+        <div class="drawer-background" id="js-drawer-background">
+        </div><!-- /.drawer-background -->
+
+        <!-- PC用ヘッダー右側 -->
+        <div class="header__right">
+          <!-- SNSアイコン -->
+          <ul class="sns">
+            <li class="sns__item1">
+              <a href="https://twitter.com/GO_WebDesigner" target="_blank">
+                <i class="fab fa-twitter sns__item1_color"></i>
+              </a>
+            </li>
+            <li class="sns__item2">
+              <a href="https://github.com/go-web5" target="_blank">
+                <i class="fab fa-github sns__item2_color"></i>
+              </a>
+            </li>
+            <li class="sns__item3">
+              <a href="https://note.com/go_web" target="_blank">
+                <img src="images/note-logo-black.svg" alt="noteのロゴ">
+              </a>
+            </li>
+          </ul>
+
+          <!-- ヘッダーナブメニュー -->
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li><a href="#about">About</a></li>
+              <li><a href="#vision">Vision</a></li>
+              <li><a href="#works">Works</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+        </div>
+        <!-- ヘッダー右側ここまで -->
+
+      </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <div class="mv" id="jsMv">
+      <div class="mv__wrapper">
+
+        <div class="mv__front"> <!-- 背景画像設置 -->
+          <div class="mv__text">
+            <div class="mv__text_inner">
+              <span class="mv__sub-name" data-aos="fade-right">Web Coder</span>
+              <h2 class="mv__name" data-aos="fade-right">
+                <span class="mv__name_inline">
+                  Gosei<br>
+                  Nakazono
+                </span>
+              </h2>
+            </div>
+
+            <!-- 音楽再生・停止ボタン -->
+            <div class="mv__beat" data-aos="fade-up">
+              <audio src="lifes-a-bitch-inst.mp3" id="beat" preload="auto" loop></audio>
+              <!-- ラベル -->
+              <div class="mv__beat_label">
+                <span class="mv__beat_label_name">Sound</span>
+                <img src="images/volume-icon.png" alt="音楽アイコン">
+              </div>
+              <!-- 再生・停止ボタン -->
+              <div class="mv__beat_btn_wrapper">
+                <button class="mv__beat_btn" type="button" id="beatOn" value="音楽再生">
+                  <img src="images/play-btn.svg" alt="音楽再生ボタン">
+                </button>
+                <button class="mv__beat_btn" type="button" id="beatOff" value="音楽再生">
+                  <img src="images/stop-btn.svg" alt="音楽停止ボタン">
+                </button>
+              </div>
+            </div>
+          </div><!-- /mv__text -->
+
+          <div class="mv__profile" data-aos="fade-up">
+            <img src="images/mv-profile.png" alt="プロフィール写真1">
+          </div>
+
+          <!-- メッセージ -->
+          <div class="mv__message_wrapper">
+            <p class="mv__message" data-aos="fade-right">
+              お客様に<span class="emphasis_red">喜</span>んでもらえるように<br>
+              思い描いたものを<span class="emphasis_red">創</span>り上げていく。<br>
+              これから出会う仲間と共に...<br>
+              変化を恐れずに<span class="emphasis_red">挑戦</span>し続けたいです。
+            </p>
+          </div>
+
+        </div>
+        <!-- Scrollテキスト -->
+        <p class="scroll">Scroll<span></span></p>
+      
+      </div>
+    </div><!--/メインビジュアル -->
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="head">
+        <h3 class="head__ttl" data-aos="fade-up">
+          <span class="emphasis_red">A</span>bout
+        </h3>
+      </div>
+
+      <div class="about__wrapper">
+        <!-- プロフィール写真 -->
+        <div class="about__img" data-aos="fade-up">
+          <img src="images/profile-image.png" alt="プロフィール写真2">
+          <p class="about__img-name">
+            Gosei Nakazono
+          </p>
+        </div>
+
+        <!-- プロフィール文 -->
+        <div class="about__profile">
+          <div class="profile-area" data-aos="fade-up">
+            <h4 class="profile-area__ttl">Profile</h4>
+            <p class="profile-area__text">
+              福岡県出身、埼玉県在住。2020年12月、Web制作の魅力に取り憑かれコーディングを中心に猛勉強開始。Webクリエーターが集まるコミュニティに参加したり、<span>menta</span>のメンターサービスを活用しながら積極的にスキルをつける。
+            </p>
+            <p>
+              また、DJの大会では6度の優勝、世界大会出場を果たすなど異色の経歴を持つ努力家。ビートメーカーとしても音源をリリースするなど、音楽を通じて多くのクリエーターと関わり作品を創り続けている。
+            </p>
+          </div> 
+
+          <div class="interlest-area" data-aos="fade-up">
+            <h4 class="interlest-area__ttl">Interlest</h4>
+            <p class="interlest-area__text">
+              楽曲制作、音楽鑑賞、お笑い、K-1観戦
+            </p>
+          </div>
+        </div><!-- /プロフィール文 -->
+      </div><!-- /about__wrapper -->
+
+      <!-- 装飾ビッグテキスト -->
+      <div class="decoration_big decoration_big_about">About</div>
+
+    </section><!-- /about -->
+
+    <!-- Vision -->
+    <section class="vision" id="vision">
+
+      <!-- vision上部 -->
+      <div class="vision__top">
+        <div class="vision__top_wrapper">
+
+          <div class="head">
+            <h3 class="head__ttl  head__ttl_white" data-aos="fade-up">
+              <span class="emphasis_red">V</span>ision
+            </h3>
+          </div>
+
+          <!-- 意気込み -->
+          <div class="intro-area" data-aos="fade-up">
+            <h4 class="intro-area__ttl">意気込み</h4>
+            <div class="intro-area__text">
+              <p>
+                Webコーダー志望。入社後は実務を重ね、<br class="br-pc">
+                適切なマークアップや、デザインを忠実に再現するなど、<br class="br-pc">
+                丁寧なコーディングを心掛け、極めます。
+              </p>
+              <p>
+                その後はWebデザインスキルを習得し、<br class="br-pc">
+                仕事の幅を広げ、受け身ではなく自ら提案し、<br class="br-pc">
+                責任を持って最後までやり遂げます。
+              </p>
+            </div>
+          </div><!-- /意気込み -->
+        </div><!-- /vision__top_wrapper -->
+      </div><!-- /vision__top -->
+
+      <!-- 入社後の成長計画 -->
+      <div class="vision__bottom">
+        <div class="plan-area">
+          <h4 class="plan-area__ttl" data-aos="fade-up">入社後の成長計画</h4>
+
+          <!-- 3ヶ月後 -->
+          <div class="plan-area__item plan-area__item_grey-1">
+            <h5 class="plan-area__item_ttl">
+              <img src="images/3month.png" alt="3ヶ月後には">
+            </h5>
+
+            <ul class="plan-area__item_text">
+              <li>適切なマークアップができる</li>
+              <li>全体的な業務の流れや社内ルールを把握しておく</li>
+              <li>WordPressやコーディングの実務に慣れる</li>
+            </ul>
+
+            <!-- 赤の下矢印アイコン -->
+            <div class="guidance-icon_red"></div>
+          </div>
+
+          <!-- 6ヶ月後 -->
+          <div class="plan-area__item plan-area__item_grey-2">
+            <h5 class="plan-area__item_ttl">
+              <img src="images/6month.png" alt="6ヶ月後には">
+            </h5>
+
+            <ul class="plan-area__item_text">
+              <li>効率化を意識、コーディングの質やスピードアップ</li>
+              <li>全体的な工程をいかに円滑に進めれるかを考え行動できる</li>
+              <li>Webデザインの勉強にも力を入れる</li>
+            </ul>
+
+            <!-- 赤の下矢印アイコン -->
+            <div class="guidance-icon_red"></div>
+          </div>
+
+          <!-- 9ヶ月後 -->
+          <div class="plan-area__item plan-area__item_grey-3">
+            <h5 class="plan-area__item_ttl">
+              <img src="images/9month.png" alt="9ヶ月後には">
+            </h5>
+
+            <ul class="plan-area__item_text">
+              <li>難しいコーディングも安心して任せられる</li>
+              <li>お客様の目的を達成する為のよりよい提案ができる</li>
+              <li>Webデザインもある程度できる</li>
+            </ul>
+
+            <!-- 赤の下矢印アイコン -->
+            <div class="guidance-icon_red"></div>
+          </div>
+
+          <!-- 12ヶ月後 -->
+          <div class="plan-area__item plan-area__item_grey-4">
+            <h5 class="plan-area__item_ttl size_control">
+              <img src="images/12month.png" alt="12ヶ月後には">
+            </h5>
+
+            <ul class="plan-area__item_text">
+              <li>Webデザインの質やスピードアップ</li>
+              <li>難易度の高い案件でも、安心のスピード感で<br class="br-pc">任せられるコーダー兼Webデザイナーになっている</li>
+            </ul>
+          </div>
+        </div><!-- /plan-area -->
+      </div><!-- /vision__bottom -->
+
+      <!-- 装飾ビッグテキスト -->
+      <div class="decoration_big decoration_big_vision">Vision</div>
+
+    </section><!-- /vision -->
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+
+      <div class="head">
+        <h3 class="head__ttl head__ttl_white" data-aos="fade-up">
+          <span class="emphasis_red">S</span>kills</h3>
+      </div>
+
+      <div class="skills__wrapper">
+
+        <!-- コーディング -->
+        <div class="skills__item" data-aos="fade-up">
+          <div class="skills__item_icon">
+            <img class="skills__item_icon_size1" src="images/coding.png" alt="コーディングのアイコン">
+          </div>
+          <h4 class="skills__item_ttl">コーディング</h4>
+          <p class="skills__item_text1">
+            デザインを忠実に再現し、保守性の高いコーディングを日々追求しています。jQueryを使ったWebサイトでよく見るパーツの実装も可能です。
+          </p>
+          <p class="skills__item_text2">
+            HTML, CSS, SASS,<br>
+            JavaScript (jQuery),<br>
+            Git/GitHub
+          </p>
+        </div>
+
+        <!-- レスポンシブ対応 -->
+        <div class="skills__item" data-aos="fade-up">
+          <div class="skills__item_icon">
+            <img class="skills__item_icon_size2" src="images/responsive.png" alt="レスポンシブのアイコン">
+          </div>
+          <h4 class="skills__item_ttl">レスポンシブ対応</h4>
+          <p class="skills__item_text1">
+            スマートフォンやタブレットの画面サイズでも、表示崩れのないように丁寧に対応させていただきます。
+          </p>
+        </div>
+
+        <!-- デザインツール -->
+        <div class="skills__item" data-aos="fade-up">
+          <div class="skills__item_icon">
+            <img class="skills__item_icon_size3" src="images/design-tool.png" alt="デザインツールのアイコン">
+          </div>
+          <h4 class="skills__item_ttl">デザインツール</h4>
+          <p class="skills__item_text1">
+            画像書き出しや、各種値の取得など、コーディングの実務で必要な操作方法は一通り理解しています。
+          </p>
+          <p class="skills__item_text2">
+            Photoshop, XD,<br>
+            Illustrator
+          </p>
+        </div>
+
+      </div><!-- /skills__wrapper -->
+
+      <!-- 装飾ビッグテキスト -->
+      <div class="decoration_big decoration_big_skills">Skills</div>
+
+    </section><!-- /skills -->
+
+    <!-- Works -->
+    <section class="works" id="works">
+
+      <div class="head">
+        <h3 class="head__ttl" data-aos="fade-up">
+          <span class="emphasis_red">W</span>orks
+        </h3>
+      </div>
+
+      <div class="works__wrapper">
+        <!-- １つ目 -->
+        <div class="works__item" data-aos="fade-up">
+          <!-- メイン（タイトル＋画像＋ボタン） -->
+          <div class="works__item_main" data-aos="fade-up">
+            <h4 class="works__item_ttl">ポートフォリオサイト</h4>
+            <div class="works__item_img">
+              <a href="https://go-webcreator.com/" target="_blank">
+                <img src="images/works-item1.jpg" alt="制作サイトのイメージ画像">
+              </a>
+            </div>
+            <div class="btn__area btn__area_flex">
+              <a href="https://github.com/go-web5/portfolio/tree/master" class="btn" target="_blank">ソースコード</a>
+              <a href="https://note.com/go_web/n/n7ea18d141bf9" class="btn" target="_blank">制作過程</a>
+            </div>
+          </div>
+
+          <!-- サブ（詳細テキストなど） -->
+          <div class="works__item_sub" data-aos="fade-up">
+            <div class="works__detail">
+              <h5 class="works__detail_ttl">詳細</h5>
+              <ul class="works__detail_list">
+                <li>担当：Writing, Design, Coding</li>
+                <li>制作期間：1ヶ月</li>
+                <li>使用言語：HTML, CSS, SASS, JavaScript (jQuery)</li>
+                <li>デザインツール：Photoshop, Illustrator</li>
+              </ul>
+            </div>
+            <div class="works__parts">
+              <h5 class="works__parts_ttl">実装パーツ</h5>
+              <p class="works__parts_text">
+                音楽再生/停止ボタン（フェードイン/アウト、スマホ幅のみ非表示）、ドロワーメニュー、スムーズスクロール、スライダー（Swiper）で自動再生、ふわっと表示（AOS）、お問い合わせフォーム（バリデーション）、スクロールしたらheader変化、トップへ戻るボタン
+              </p>
+            </div>
+          </div>
+        </div><!-- １つ目 -->
+
+        <!-- ２つ目 -->
+        <div class="works__item" data-aos="fade-up">
+          <!-- メイン（タイトル＋画像＋ボタン） -->
+          <div class="works__item_main" data-aos="fade-up">
+            <h4 class="works__item_ttl">
+              温泉旅館のコーポレートサイト（架空）4ページ ※解答コードなしの教材
+            </h4>
+            <div class="works__item_img">
+              <a href="http://gowebcreator.xsrv.jp/" target="_blank">
+                <img src="images/works-item2.jpg" alt="制作サイトのイメージ画像">
+              </a>
+            </div>
+            <div class="btn__area">
+              <a href="https://github.com/go-web5/ishiikadan-chukyu-ex/tree/master" class="btn" target="_blank">ソースコード</a>
+            </div>
+          </div>
+
+          <!-- サブ（詳細テキストなど） -->
+          <div class="works__item_sub" data-aos="fade-up">
+            <div class="works__detail">
+              <h5 class="works__detail_ttl">詳細</h5>
+              <ul class="works__detail_list">
+                <li>担当：Coding</li>
+                <li>制作期間：20日間</li>
+                <li>使用言語：HTML, CSS, SASS, JavaScript (jQuery)</li>
+                <li>デザインツール：XD</li>
+              </ul>
+            </div>
+            <div class="works__parts">
+              <h5 class="works__parts_ttl">実装パーツ</h5>
+              <p class="works__parts_text">
+                ハンバーガーメニュー、スライダー（Slick）でフェードイン / アウト＆ズームイン 、タブ切り替え、ふわっと表示（AOS）、パンくずリスト、宿泊予約モーダル（flatpickr、バリデーション）、スクロールしたらheader変化
+              </p>
+            </div>
+          </div>
+        </div><!-- ２つ目 -->
+
+        <!-- ３つ目 -->
+        <div class="works__item" data-aos="fade-up">
+          <!-- メイン（タイトル＋画像＋ボタン） -->
+          <div class="works__item_main" data-aos="fade-up">
+            <h4 class="works__item_ttl">
+              コーディング代行会社のコーポレートサイト（架空） ※解答コードなしの教材
+            </h4>
+            <div class="works__item_img">
+              <a href="https://your-coding-chukyu.netlify.app/" target="_blank">
+                <img src="images/works-item3.jpg" alt="制作サイトのイメージ画像">
+              </a>
+            </div>
+            <div class="btn__area">
+              <a href="https://github.com/go-web5/your-coding-chukyu" class="btn" target="_blank">ソースコード</a>
+              <!-- <a href="#" class="btn">制作過程</a> -->
+            </div>
+          </div>
+
+          <!-- サブ（詳細テキストなど） -->
+          <div class="works__item_sub" data-aos="fade-up">
+            <div class="works__detail">
+              <h5 class="works__detail_ttl">詳細</h5>
+              <ul class="works__detail_list">
+                <li>担当：Coding</li>
+                <li>制作期間：20日間</li>
+                <li>使用言語：HTML, CSS, SASS, JavaScript (jQuery)</li>
+                <li>デザインツール：XD</li>
+              </ul>
+            </div>
+            <div class="works__parts">
+              <h5 class="works__parts_ttl">実装パーツ</h5>
+              <p class="works__parts_text">
+                ハンバーガーメニュー、スライダー（Swiper）で自動再生 、ふわっと表示（AOS）、アコーディオンメニュー、スムーズスクロール、お問い合わせフォーム（バリデーション）
+              </p>
+            </div>
+          </div>
+        </div><!-- ３つ目 -->
+
+        <!-- ４つ目 -->
+        <div class="works__item" data-aos="fade-up">
+          <!-- メイン（タイトル＋画像＋ボタン） -->
+          <div class="works__item_main" data-aos="fade-up">
+            <h4 class="works__item_ttl">
+              総合内科のコーポレートサイト（架空） ※解答コードなしの教材
+            </h4>
+            <div class="works__item_img works__item_img_margin">
+              <a href="http://gogoweb.html.xdomain.jp/ishii-sogo-naika/" target="_blank">
+                <img src="images/works-item4.jpg" alt="制作サイトのイメージ画像">
+              </a>
+            </div>
+            
+            <div class="works__item_password_btn">
+              <div class="works__item_password">
+                <h5 class="works__item_password_ttl"><span>basic</span>認証情報</h5>
+                ユーザー名：gogoweb<br>
+                パスワード：gorilla5
+              </div>
+
+              <div class="btn__area">
+                <a href="https://github.com/go-web5/ishii-sogo-naika/tree/master" class="btn" target="_blank">ソースコード</a>
+              </div>
+            </div><!-- /works__item_password_btn -->
+          </div>
+
+          <!-- サブ（詳細テキストなど） -->
+          <div class="works__item_sub" data-aos="fade-up">
+            <div class="works__detail">
+              <h5 class="works__detail_ttl">詳細</h5>
+              <ul class="works__detail_list">
+                <li>担当：Coding</li>
+                <li>制作期間：12日間</li>
+                <li>使用言語：HTML, CSS</li>
+                <li>デザインツール：XD</li>
+              </ul>
+            </div>
+
+            <div class="works__detail_img">
+              <img src="images/pc-boy.png" alt="イメージ画像">
+            </div>
+          </div>
+
+        </div><!-- ４つ目 -->
+
+        <!-- 装飾ビッグテキスト -->
+        <div class="decoration_big decoration_big_works">Works</div>
+
+      </div><!-- /works__wrapper -->
+    </section><!-- /works -->
+
+    <!-- Input & Output -->
+    <section class="input-output" id="input-output">
+      <div class="head">
+        <h3 class="head__ttl head__ttl_white" data-aos="fade-up">
+          <span class="emphasis_red">I</span>nput & <!--  
+       --><span class="emphasis_red">O</span>utput
+        </h3>
+      </div>
+
+      <!-- スライダー（Swiper） -->
+      <div class="swiper-container" data-aos="fade-up">
+        <div class="swiper-wrapper">
+
+          <!-- スライダーアイテム１ -->
+          <article class="swiper-slide">
+            <a href="https://csc.innovasica.jp/" target="_blank">
+              <h4 class="swiper-slide__ttl">
+                Web系コミュニティに参加
+              </h4>
+              <div class="swiper-slide__img swiper-slide__img_size_s">
+                <img src="images/synergycafe-logo.png" alt="シナジーカフェのロゴ">
+              </div>
+              <p class="swiper-slide__text">
+                Web業界のベテランも多数参加している「シナジーカフェ」というコミュニティで、現場での貴重なお話や基礎知識などを学ばせてもらっております。<br>
+                また、現在はWebデザイナーさんと組んでサイト制作をしています。
+              </p>
+            </a>
+          </article>
+
+          <!-- スライダーアイテム２ -->
+          <article class="swiper-slide">
+            <a href="https://menta.work/" target="_blank">
+              <h4 class="swiper-slide__ttl">
+                メンターサービスの活用
+              </h4>
+              <div class="swiper-slide__img swiper-slide__img_size_l">
+                <img src="images/menta-logo.png" alt="メンタのロゴ">
+              </div>
+              <p class="swiper-slide__text">
+                現役プログラマーの方からマンツーマンでご指導して頂いており、技術的なレベルを上げるためにサポートして頂いております。<br>
+                入社後も早く成長できるように活用していきます。
+              </p>
+            </a>
+          </article>
+
+          <!-- スライダーアイテム３ -->
+          <article class="swiper-slide swiper-slide_book">
+            <h4 class="swiper-slide__ttl">
+              各教材で基礎知識を学ぶ
+            </h4>
+            <div class="swiper-slide__img swiper-slide__img_size_l">
+              <img src="images/study-books.jpg" alt="学習書籍">
+            </div>
+            <p class="swiper-slide__text">
+              書籍、動画、コーディング教材、オンラインプログラミング学習サービス「Progate」など、角度を変えたりして自分にあった学習方法を探りつつ、基礎を学びました。
+            </p>
+          </article>
+          
+          <!-- スライダーアイテム４ -->
+          <article class="swiper-slide swiper-slide_twitter_custum">
+            <!-- <h4 class="swiper-slide__ttl">
+              日々の積み上げツイート
+            </h4> -->
+
+            <a class="twitter-moment"
+              data-cards="hidden"
+              data-chrome="noheader nofooter noscrollbar"
+              data-limit="1"
+              data-width="100%"
+              date-height="400"
+              data-lang="ja"
+              data-dnt="true"
+              href="https://twitter.com/i/moments/1398230509772165120?ref_src=twsrc%5Etfw">
+              WEB制作 - 日々の積み上げ記録 by GO
+            </a>  
+            <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            <!-- <p class="swiper-slide__text">
+              学習した事や、1日・1ヶ月ごとの学習目標、振り返りなどをTwitterでツイートしました。
+            </p> -->
+          </article>
+          
+          <!-- スライダーアイテム５ -->
+          <article class="swiper-slide">
+            <a href="https://note.com/go_web/m/m714b5b4260ff" target="_blank">
+              <h4 class="swiper-slide__ttl">
+                １日１サイトレビュー
+              </h4>
+              <div class="swiper-slide__img swiper-slide__img_size_l">
+                <img src="images/site-review.jpg" alt="イメージ画像">
+              </div>
+              <p class="swiper-slide__text">
+                デザイン力や提案力を上げる為に、色んな業種のサイトを分析しました。<br>
+                デザインの意図の推測をしたり、発見した事を言語化してnoteに記録しました。
+              </p>
+            </a>
+          </article>
+
+        </div><!-- /swiper-wrapper -->
+      </div><!-- /スライダー（Swiper） -->
+    </section><!-- /Input & Output -->
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="head">
+        <h3 class="head__ttl contact__head_margin" data-aos="fade-up">
+          <span class="emphasis_red">C</span>ontact
+        </h3>
+        <p class="head__text" data-aos="fade-up">
+          最後までご覧いただき<br class="br-sp">
+          ありがとうございます。<br>
+          なにかご質問などありましたら<br class="br-sp">
+          お気軽にご連絡お待ちしております。
+        </p>
+      </div>
+
+      <!-- 入力フォーム -->
+      <div class="contact__wrapper" data-aos="fade-up">
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScgEbcALb9XgkO4N397yMMPHaDhqzrgJeiQ2V5FQfeZIGyGxg/formResponse" class="contact__form" id="js-form">
+        
+          <!-- お名前 -->
+          <div class="contact__name" id="nameSection" autocomplete="name">
+            <label for="name" name="name">お名前<span class="Required-tag">必須</span></label>
+            <p class="alert">お名前を入力してください</p>
+            <input type="text" id="name" placeholder="山田 太郎" value="" name="entry.416731773">
+          </div>
+
+          <!-- フリガナ -->
+          <div class="contact__furigana" id="furiganaSection">
+            <label for="furigana" name="furigana">フリガナ<span class="Required-tag">必須</span></label>
+            <p class="alert">フリガナを入力してください</p>
+            <input type="text" id="furigana" placeholder="ヤマダ タロウ" value="" name="entry.225261640">
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="contact__mail" id="mailSection" autocomplete="email">
+            <label for="mail" name="mail">メールアドレス<span class="Required-tag">必須</span></label>
+            <p class="alert">メールアドレスを入力してください</p>
+            <input type="email" id="mail" placeholder="yamada@email" value="" name="entry.1361804973">
+          </div>
+
+          <!-- お問い合わせ内容 -->
+          <div class="contact__detail" id="textareaSection">
+            <label for="message">お問い合わせ内容<span class="Required-tag">必須</span></label>
+            <p class="alert">お問い合わせ内容を入力してください</p>
+            <textarea id="message" cols="30" rows="10" placeholder="お問い合わせ内容" value="" name="entry.284501399"></textarea>
+          </div>
+
+          <!-- チェックボックス  -->
+          <div class="contact__check-box" id="checkboxSection">
+            <label for="inputCheck" class="contact__check-box_text">
+              <input type="checkbox" id="inputCheck" name="entry.1788819638">
+              <span>
+                入力内容に間違いがなければ<br class="br-sp">チェックを入れてください
+              </span>
+            </label>
+            <p class="alert">
+              チェックボックスに<br class="br-sp">チェックをつけてください
+            </p>
+            <!-- 送信ボタン -->
+            <label><input type="submit" value="送信する" class="btn submit__btn" id="submitBtn"></label>
+           
+          </div>
+        </form>
+
+        <!-- 送信完了＆送信失敗画面 -->
+        <p class="end-message">送信完了しました。<br class="br-sp">ありがとうございました。</p>
+        <p class="false-message">送信に失敗しました。<br class="br-sp">ページを更新して再度送信してください。</p>
+
+      </div><!-- /入力フォーム -->
+
+    </section><!-- /Contactここまで -->
+
+    <!-- フッター -->
+    <footer class="footer">
+
+      <!-- トップへ戻るボタン -->
+      <div id="js-pagetop" class="pagetop">
+        <a class="pagetop__btn">
+          <img src="images/page-top.svg" alt="トップへ戻るボタン">
+          <span>top</span>
+        </a>
+      </div>
+
+      <!-- フッターメニュー -->
+      <ul class="footer__menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- フッターSNS -->
+      <ul class="footer__sns">
+        <li class="footer__sns_item1">
+          <a href="https://twitter.com/GO_WebDesigner" target="_blank">
+            <i class="fab fa-twitter footer__sns_item1_color"></i>
+          </a>
+        </li>
+        <li class="footer__sns_item2">
+          <a href="https://github.com/go-web5" target="_blank">
+            <i class="fab fa-github footer__sns_item2_color"></i>
+          </a>
+        </li>
+        <li class="footer__sns_item3">
+          <a href="https://note.com/go_web" target="_blank">
+            <img src="images/note-logo-white.svg" alt="noteのロゴ">
+          </a>
+        </li>
+      </ul>
+      <!-- コピーライト  -->
+      <p class="footer__copyright"><small>&copy; Gosei Nakazono Portfolio</small></p>
+    </footer><!-- /フッター -->
+  </main><!-- メインここまで -->
+
+  <!-- jQuery (ファイル用意) -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+
+  <!-- お問い合わせ送信時のAjax利用 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+  <!-- Swiper CDN -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Twitter モーメント -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
+  <!-- AOS CSS (フワッと表示) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init({
+    offset: 120,
+    delay: 0,
+    duration: 600,
+    easing: 'ease',
+    once: false,
+    mirror: false,
+    anchorPlacement: 'top-bottom',
+  });
+  </script>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

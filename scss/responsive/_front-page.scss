@@ -1,0 +1,460 @@
+//*------------------*
+//*  改行メディアクエリ
+//*------------------*
+
+@media screen and (min-width: 992px){
+  .br-pc { display: block; }
+  .br-sp { display: none; }
+}
+
+@media screen and (max-width: 992px){
+  .br-pc { display: none; }
+  .br-sp { display: block; }
+}
+
+
+//*------------------*
+//*  レスポンシブ↓
+//*------------------*
+//*------------------*
+//*  360px以上
+//*------------------*
+
+@include ss {
+  .mv {
+    &__front {
+      padding-top: 60px;
+    }
+    &__profile {
+      width: 85%;
+    }
+  }
+}
+
+
+//*------------------*
+//*  576px以上
+//*------------------*
+
+@include sm {
+  .mv {
+    height: 480px;
+
+    &::after {
+      bottom: 0px;
+      width: 100%;
+      height: 50%;
+      z-index: -1;
+    }
+
+    &__wrapper {
+      padding-bottom: 54px;
+    }
+
+    &__front {
+      background-position: center right 60%;
+      width: 94%;
+      padding: 30px 0 0 6%;
+    }
+
+    &__profile {
+      width: 35%;
+      left: 60%;
+    }
+
+    &__message {
+      position: static;
+      box-shadow: 3px 5px 5px 2px rgba(2, 10, 13, 0.6);
+      width: auto;
+      text-align: left;
+    }
+
+    // 音楽再生ボタン
+    &__text {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2% 0 0;
+    }
+
+    &__beat {
+      background-color: $accent-color-gold;
+      display: inline-block;
+      padding: 8px 10px 5px;
+      width: 120px;
+      height: 78px;
+      border-radius: 15px;
+      box-shadow: 3px 5px 5px 2px rgba(2, 10, 13, 0.6);
+    }
+
+    &__beat_label {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+
+      &_name {
+        font-size: 18px;
+        color: $main-color-black;
+        vertical-align: middle;
+        padding-right: 5px;
+        line-height: 1;
+      }
+      img {
+        width: 28px;
+        vertical-align: middle;
+      }
+    }
+
+    &__beat_btn_wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &__beat_btn {
+      width: 40px;
+    }
+    &__beat_btn:first-of-type {
+      margin-right: 10px;
+    }
+  }
+
+  .scroll {
+    bottom: 30px;
+    width: 6%;
+    right: 0;
+    display: block;
+    span {
+      height: 100px;
+    }
+  }
+
+  .decoration_big {
+    @include rem(220);
+    bottom: -93px;
+  }
+}
+
+//*------------------*
+//*  768px以上
+//*------------------*
+
+@include md {
+  .mv {
+    height: 630px;
+
+    &::after {
+      height: 50%;
+    }
+
+    &__front {
+      background-position: center right 40%;
+      width: 94%;
+      padding: 68px 0 0 6%;
+    }
+
+    &__text {
+      margin-bottom: 5px;
+    }
+    &__sub-name {
+      box-shadow: 5px 6px 5px 3px rgba(2, 10, 13, 0.6);
+    }
+    &__name_inline {
+      @include rem(60);
+      line-height: 1.2;
+      box-shadow: 5px 6px 5px 3px rgba(2, 10, 13, 0.6);
+    }
+    &__profile {
+      max-width: 320px;
+      width: 45%;
+      left: 58%;
+    }
+    &__message {
+      box-shadow: 5px 6px 5px 3px rgba(2, 10, 13, 0.6);
+    }
+    &__beat {
+      box-shadow: 5px 6px 5px 3px rgba(2, 10, 13, 0.6);
+    }
+  }
+
+  .about {
+    padding-bottom: 182px;;
+  }
+
+  .scroll {
+    @include rem(20);
+    bottom: 30px;
+    line-height: 2.5;
+    span {
+      height: 100px;
+    }
+  }
+
+  .decoration_big {
+    @include rem(220);
+    bottom: -93px;
+  }
+}
+
+//*------------------*
+//*  992px以上
+//*------------------*
+
+@include lg {
+  .mv {
+    height: calc(768px + 90px);
+    padding-top: 165px;
+
+    &::after {
+      height: 48%;
+    }
+
+    &__wrapper {
+      padding-bottom: 90px;
+    }
+
+    &__text {
+      margin: 0 auto .3em;
+      max-width: 1200px;
+      padding: 0 2% 0 0;
+    }
+
+    // 音楽再生ボタンのホバー
+    &__beat_btn:hover {
+      opacity: .7;
+    }
+
+    &__sub-name {
+      @include rem(30);
+      width: 6.4em;
+      height: 1.444em;
+      line-height: 42px;
+      margin-bottom: 3px;
+      padding: 0 10px;
+    }
+
+    &__name_inline {
+      @include rem(90);
+      line-height: 1.16;
+      padding: 2px 12px;
+    }
+
+    &__message_wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    &__profile {
+      left: 57%;
+      max-width: 425px;
+    }
+
+    &__message {
+      @include rem(20);
+      padding: 0.65em 0.813em;
+    }
+  }
+
+  .scroll {
+    @include rem(32);
+    bottom: 50px;
+    line-height: 2.1;
+    span {
+      height: 145px;
+    }
+  }
+
+  // About
+  .about {
+    padding-top: 92px;
+    padding-bottom: 186px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 6% 0 8%;
+    }
+
+    &__img {
+      width: 48%;
+      margin: 0;
+    }
+    &__img-name {
+      @include rem(40);
+    }
+    &__profile {
+      width: 48%;
+      @include rem(24);
+    }
+  }
+  .decoration_big {
+    @include rem(360);
+    bottom: -143px;
+  }
+
+  .head {
+    margin-bottom: 92px;
+    &__ttl {
+      @include rem(48);
+      line-height: 1;
+    }
+  }
+
+
+  // Vision 意気込み
+  .vision {
+    padding-bottom: 186px;
+
+    &__top {
+      padding-top: 92px;
+      padding-bottom: 13%;
+    }
+  }
+
+  .intro-area {
+    max-width: 620px;
+    margin: 0 auto;
+    border-radius: 90px;
+
+    &__ttl {
+      @include rem(30);
+    }
+    &__text {
+      @include rem(20);
+      line-height: 1.8;
+    }
+  }
+
+  // Vision 入社後の成長計画
+  .plan-area {
+    margin-bottom: -15px;
+    &__ttl {
+      @include rem(30);
+    }
+
+    &__item {
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto 15px;
+    }
+    &__item_ttl {
+      width: 30%;
+      margin: 0;
+    }
+    &__item_text {
+      width: 70%;
+      li {
+        text-indent: -1.3em;
+      }
+    }
+  }
+
+  // Skills
+  .skills {
+    padding-top: 92px;
+    padding-bottom: 186px;
+
+    &__wrapper {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+
+    }
+    &__item {
+      padding: 0 2% 40px;
+      margin-bottom: 0;
+    }
+    &__item + &__item {
+      margin-left: 2.4%;
+    }
+  }
+
+  // Works
+  .works {
+    padding-top: 92px;
+    padding-bottom: 186px;
+
+    &__item {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1000px;
+      padding: 43px 4%;
+      margin: 0 auto 30px;
+    }
+
+    &__item_main {
+      width: 44%;
+      margin: 0;
+    }
+
+    &__item_img:hover {
+      opacity: .7;
+    }
+
+    &__item_sub {
+      width: calc(44% + 4%);
+      padding-left: 4%;
+    }
+
+    &__item_password {
+      margin-bottom: 0;
+    }
+
+    .btn__area {
+      margin-bottom: 0;
+    }
+  }
+
+  // Input & Output 
+  .input-output {
+    padding-top: 92px;
+  }
+  .swiper-slide:hover:not(.swiper-slide_book) {
+    opacity: .7;
+  }
+  .swiper-slide:not(.swiper-slide_twitter_custum) {
+    padding: 24px 2% 40px;
+  }
+
+  // Contact
+  .contact {
+    padding-top: 92px;
+  }
+}
+
+//*------------------*
+//*  1200px以上
+//*------------------*
+
+@include xl {
+  .mv {
+    &__profile {
+      left: 63%;
+      max-width: 425px;
+    }
+  }
+
+  .vision {
+    &__top {
+      padding-bottom: 15%;
+      background-position: center top 100%;
+    }
+  }
+
+  .intro-area {
+    min-width: 620px;
+    max-width: 50%;
+  }
+} 
+
+@include xl {
+  .scroll {
+    @include rem(32);
+    bottom: 50px;
+    line-height: 2.7;
+    span {
+      height: 130px;
+      margin-top: 24px;
+    }
+  }
+}

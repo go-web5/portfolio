@@ -1,0 +1,111 @@
+//*--------------------------*
+//*  ヘッダー（レスポンシブ）
+//*--------------------------*
+
+// 992px 
+@include lg {
+  .header {
+    &__wrapper {
+      height: 165px;
+      transition: height .3s;
+    }
+    &__wrapper_scroll {
+      height: 120px;
+    }
+    &__logo {
+      width: 264px;
+    }
+    &__logo a:hover {
+      opacity: .7;
+    }
+
+    &__nav {
+      @include rem(24);
+      @include toppanBunkyu;
+      margin-top: 21px;
+    }
+
+    &__nav-list {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: $main-color-black;
+        padding: 0 0.5em;
+        display: inline-block;
+      }
+      a:hover {
+        opacity: .7;
+      }
+    }
+
+  }
+
+  // ハンバーガーボタン非表示
+  .hamburger {
+    display: none;
+  }
+
+  // ヘッダーナビメニュー表示（右側）
+  .header__right {
+    display: block;
+    // padding-top: 8px;
+  }
+
+  .sns {
+    display: flex;
+    justify-content: space-between;
+    width: 188px;
+    margin-left: auto;
+    margin-top: 15px;
+    
+    &__item1_color,
+    &__item2_color {
+      font-size: 35px;
+      color: $main-color-black;
+    }
+
+    a {
+      padding: 0 0.5em;
+      display: inline-block;
+    }
+
+    a:hover {
+      opacity: .7;
+    }
+
+    &__item3 {
+      width: 48px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+//*---------------------*
+//*  ドロワーメニュー
+//*---------------------*
+
+// 576px以上
+@include sm {
+  .drawer__name {
+    @include rem(50);
+  }
+  .hamburger {
+    right: 6%;
+  }
+}
+
+// 768px以上
+@include md {
+  .drawer__name {
+    @include rem(64);
+  }
+
+  .drawer__nav {
+    @include rem(24);
+  }
+}
+

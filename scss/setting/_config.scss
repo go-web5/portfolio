@@ -1,0 +1,31 @@
+//*------------------*
+//*  変数管理
+//*------------------*
+
+// ベースカラー
+$base-color-white: #fff;
+
+// メインカラー
+$main-color-black: #10141b;
+$main-color-black-text: #1f242e;
+
+// サブカラー
+$sub-color-grey-1: #f2f4f6;
+$sub-color-grey-2: #cfd4dc;
+$sub-color-grey-3: #a9b4c7;
+$sub-color-grey-4: #818ea5;
+
+// アクセントカラー
+$accent-color-red: #eb001b;
+$accent-color-gold: #aaa265;
+
+
+// font-family
+
+// 游明朝体（エクストラボールド、ミディアム）
+$font-type1: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", 
+"ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", 
+"ＭＳ Ｐ明朝", "MS PMincho", serif;
+
+// 凸版文久見出し明朝
+$font-type2: "toppan-bunkyu-midashi-min-st", 'Toppan Bunkyu Midashi Mincho', "凸版文久見出し明朝", serif;

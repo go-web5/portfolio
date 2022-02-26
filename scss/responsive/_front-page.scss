@@ -200,7 +200,8 @@
 @include lg {
   .mv {
     height: calc(768px + 90px);
-    padding-top: 165px;
+    // padding-top: 165px;
+    padding-top: 140px;
 
     &::after {
       height: 48%;

@@ -45,7 +45,9 @@
 //*---------------------*
 
 // ハンバーガーメニュー閉じた時に動かないように
-body.noscroll {
+html.noscroll,
+html.noscroll body {
+  height: 100%;
   overflow: hidden;
 }
 
@@ -116,7 +118,7 @@ body.noscroll {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   background-color: #000;
   color: #fff;
   visibility: hidden;

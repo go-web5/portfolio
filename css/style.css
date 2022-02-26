@@ -80,7 +80,9 @@ ul {
   display: none;
 }
 
-body.noscroll {
+html.noscroll,
+html.noscroll body {
+  height: 100%;
   overflow: hidden;
 }
 
@@ -147,7 +149,7 @@ body.noscroll {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   background-color: #000;
   color: #fff;
   visibility: hidden;
@@ -1054,6 +1056,7 @@ body.noscroll {
   background-repeat: no-repeat;
   padding-top: 60px;
   padding-bottom: 60px;
+  overflow: hidden;
 }
 
 .swiper-slide {

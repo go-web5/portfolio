@@ -7,7 +7,7 @@ $(function () {
     $('body').toggleClass('is-drawerActive');
 
     //bodyにnoscrollクラスを付与(スクロールを固定)
-    $('body').toggleClass('noscroll'); 
+    $('html').toggleClass('noscroll'); 
   
     if ($(this).attr('aria-expanded') == 'false') {
       $(this).attr('aria-expanded', 'true');
@@ -31,7 +31,7 @@ $(function () {
     $('body').removeClass('is-drawerActive');
     $('#js-hamburger').attr('aria-expanded', 'false');
     $('#js-global-menu').attr('area-hidden','true');
-    $('body').removeClass('noscroll'); 
+    $('html').removeClass('noscroll'); 
   });
 });
 
